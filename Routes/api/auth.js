@@ -1,12 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const auth = require("../../middleware/auth");
 
-// @route   GET api/auth
-// @desc    Test route
-// @access  Public
-
-router.get("/", (req, res) => {
-  res.send("Auth route");
+// Protected route example
+router.get("/", auth, (req, res) => {
+  // Access authenticated user via req.user
+  res.send("Authenticated route, user ID: " );
 });
 
 module.exports = router;
