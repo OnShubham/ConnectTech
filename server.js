@@ -4,6 +4,13 @@ const connectDB = require("./config/db"); // import the connectDB function from 
 const app = express(); // create an express server
 
 connectDB(); // connect to the database
+
+// Init Middleware
+
+app.use(express.json({ extended: false })); // allow the server to accept json data
+
+
+
 // deffine the routes
 app.use("/api/users", require("./Routes/api/users")); // use the users.js file for the /api/users route
 app.use("/api/auth", require("./Routes/api/auth")); // use the auth.js file for the /api/auth route
