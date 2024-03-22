@@ -49,8 +49,6 @@ h4 {
   border-radius: 8px;
 }
 
-
-
 .footer {
   background-color: var(--dark-headline);
   color: var(--light-background);
@@ -58,3 +56,33 @@ h4 {
   text-align: center;
   box-shadow: #0c121c 0px 0px 2px;
 }
+
+/* Login.css */
+.login-background,
+.register-background {
+  background-color: var(--main-color);
+  box-shadow: #000000 0px 0px 10px;
+  border-radius: 2rem;
+}
+
+.login-card {
+  background-color: var();
+  border-radius: 10px;
+  box-shadow: #000000 0px 0px 0px;
+  padding: 2rem;
+  width: auto;
+}
+
+.login-card .btn-primary {
+  background-color: #ffffff;
+  color: #000000;
+}
+.login-card .form-label {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.login-card .form-control {
+  color: #000000;
+}
+
