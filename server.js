@@ -19,6 +19,6 @@ app.use("/api/post", require("./Routes/api/post")); // use the post.js file for 
 
 app.get("/", (req, res) => res.send("API Runing!")); // get request to the root of the server
 
-const port = process.env.PORT || 5000; // set the port to the environment port or 5000
+const port = process.env.PORT || 8000; // set the port to the environment port or 5000
 
 app.listen(port, () => console.log(`Server running on port ${port}`)); // listen on the port
