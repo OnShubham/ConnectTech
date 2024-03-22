@@ -8,9 +8,6 @@
     "server": "nodemon server",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\""
-
-    
-
   },
   "author": "Shubham Kharche",
   "license": "MIT",
