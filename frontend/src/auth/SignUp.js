@@ -4,6 +4,7 @@ import icon from "../Assets/User research-rafiki.png"; // Ensure the path is cor
 
 const SignUp = () => {
   const [user, setUser] = useState({
+    name : "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -20,8 +21,30 @@ const SignUp = () => {
       alert("Passwords don't match!");
       return;
     }
-    console.log("User Registered", user);
+    try {
+      const response = await fetch("http://localhost:8000/api/users/register", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: user.name,
+          email: user.email,
+          password: user.password,
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+      if (data.success) {
+        alert("User registered successfully");
+      } else {
+        alert(" User registered successfully ", data.error);
+      }
+    } catch (error) {
+      console.log("SignUp", error);
+    }
   };
+
 
   return (
     <Container className="p-5">
@@ -41,6 +64,21 @@ const SignUp = () => {
             <hr />
 
             <Form onSubmit={handleSubmit}>
+
+            <Form.Group className="mb-3" controlId="formBasicname">
+                <Form.Label>Name address</Form.Label>
+                <Form.Control
+                  type="name"
+                  name="name"
+                  placeholder="Enter name"
+                  value={user.name}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+
+
+              {/*  */}
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control

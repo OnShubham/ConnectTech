@@ -15,21 +15,43 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login Request", loginInfo);
+    try {
+      const response = await fetch("http://localhost:8000/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: loginInfo.email,
+          password: loginInfo.password,
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+      if (data.success) {
+        alert("User logged in successfully");
+      } else {
+        alert("User logged in successfully ", data.error);
+      }
+    } catch (error) {
+      console.log("Login", error);
+    }
   };
 
   return (
     <Container className="p-5">
       <Row className="justify-content-md-center align-items-center login-background">
-
-      <Col xs={16} md={6} className="mt-4" >
-        <h1 className="text-center" style={{color: "white", font: "3rem"}}>Sign-In</h1>
+        <Col xs={16} md={6} className="mt-4">
+          <h1 className="text-center" style={{ color: "white", font: "3rem" }}>
+            Sign-In
+          </h1>
           <div className="login-card">
-            
-            <p className="" style={{color: "white", wordSpacing: "2px"}}>Login to your account</p>
+            <p className="" style={{ color: "white", wordSpacing: "2px" }}>
+              Login to your account
+            </p>
 
             <hr />
-            
+
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -62,8 +84,6 @@ const Login = () => {
           </div>
         </Col>
 
-
-
         {/*  */}
         <Col
           xs={12}
@@ -72,8 +92,6 @@ const Login = () => {
         >
           <img src={icon} alt="icon" className="img-fluid " />
         </Col>
-
-      
       </Row>
     </Container>
   );
