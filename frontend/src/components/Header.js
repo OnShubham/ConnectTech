@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <Navbar className="Header" expand="lg ">
+    <Navbar className="Header" expand="lg " style={{background: "#d6d6d6"}}>
       <Container>
         <Navbar.Brand as={Link} to="/">
           Connect - Tech

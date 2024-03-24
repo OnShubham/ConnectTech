@@ -5,7 +5,10 @@ import logo from "../Assets/3081614.jpg";
 
 function Landing() {
   return (
-    <Container className="mt-5 pt-5">
+
+   
+
+    <Container className="mt-5 pt-5 "  >
       <Row>
         <Col xs={12} md={6}>
           <img src={logo} alt="logo" className="img-fluid" />
@@ -30,6 +33,8 @@ function Landing() {
       </Row>
       
     </Container>
+
+   
   );
 }
 

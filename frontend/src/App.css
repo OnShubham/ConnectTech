@@ -10,7 +10,7 @@
 
 /* Example usage of the color variable */
 body {
-  background-color: var(--light-background);
+
   margin: 0px;
   padding: 0px;
   font-family: "Roboto", sans-serif;
@@ -86,3 +86,8 @@ h4 {
   color: #000000;
 }
 
+.landing {
+  background-color: var(--light-background);
+  color: var(--dark-text);
+  padding: 2rem;
+}
