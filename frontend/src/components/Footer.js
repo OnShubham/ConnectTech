@@ -1,9 +1,9 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 
 function Footer() {
   return (
-    <footer className="mt-auto py-4 bg-light footer">
+    <footer className="mt-auto bg-light footer">
       <Container>
         <Row>
           <Col className="text-center">

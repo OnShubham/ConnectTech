@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className="d-flex flex-column min-vh-100">
+        <div className="d-flex flex-column ">
           <Header />
 
           <Routes>

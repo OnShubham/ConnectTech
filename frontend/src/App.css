@@ -10,7 +10,6 @@
 
 /* Example usage of the color variable */
 body {
-
   margin: 0px;
   padding: 0px;
   font-family: "Roboto", sans-serif;
@@ -43,7 +42,7 @@ h4 {
   display: inline-block;
   font-size: 1rem;
   margin: 0.5rem 1rem;
-  width: 10rem;
+  width: 7rem;
   cursor: pointer;
 
   border-radius: 8px;
@@ -55,6 +54,9 @@ h4 {
   padding: 2rem;
   text-align: center;
   box-shadow: #0c121c 0px 0px 2px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 /* Login.css */

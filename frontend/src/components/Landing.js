@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import logo from "../Assets/3081614.jpg";
+import logo1 from "../Assets/logo.png";
 
 function Landing() {
   return (
@@ -17,7 +18,12 @@ function Landing() {
           <div>
             <h1 style={{ color: "#0046fc" }}>
               {" "}
-              Welcome to <b> Connect - Tech </b>
+              <img
+            src={logo1}
+            width="50"
+            height="50"
+            className="d-inline-block align-bottom"
+            alt="Tech" />     Welcome to <b> Connect - Tech </b>
             </h1>{" "}
             <br />
             <h3> Where Developers Connect and Innovate Together </h3> <br />
