@@ -93,3 +93,41 @@ h4 {
   color: var(--dark-text);
   padding: 2rem;
 }
+
+.alert {
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* Position on the left side */
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Slightly lighter shadow for subtlety */
+  padding: 10px 15px; /* Reduced padding for a smaller size */
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #007bff; /* Blue background */
+  color: rgb(0, 17, 253); /* White text color for contrast */
+  font-size: 14px; /* Smaller font size */
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Adjusting for smaller screen or specific alert types, if necessary */
+@media (max-width: 600px) {
+  .alert {
+    width: calc(100% - 40px); /* Full-width on smaller screens with some padding */
+    bottom: 10px;
+    left: 10px;
+    border-radius: 0; /* Optional: full-width alerts might look better with no border-radius */
+  }
+}

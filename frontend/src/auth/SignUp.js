@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import icon from "../Assets/User research-rafiki.png"; // Ensure the path is correct
 
-const SignUp = () => {
+import { connect } from "react-redux";
+
+import { setAlert } from "../actions/alert";
+import PropTypes from 'prop-types'
+
+
+const SignUp = ({setAlert}) => {
   const [user, setUser] = useState({
     name : "",
     email: "",
@@ -18,7 +24,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (user.password !== user.confirmPassword) {
-      alert("Passwords don't match!");
+      setAlert("Passwords don't match!");
       return;
     }
     try {
@@ -126,4 +132,10 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+
+SignUp.propTypes = {
+  setAlert: PropTypes.func.isRequired,
+}
+
+
+export default connect(null,{setAlert} ) (SignUp);
